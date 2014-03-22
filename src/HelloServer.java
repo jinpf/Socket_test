@@ -9,15 +9,15 @@ public class HelloServer {
 		ServerSocket server=null;
 		Socket client=null;
 		
-		server=new ServerSocket(8888);
-		System.out.println("等待客户端连接：");
+		server=new ServerSocket(8888);		//listen on port 8888
+		System.out.println("Wait for Client:");
 		
 		client=server.accept();
-		in=new DataInputStream(client.getInputStream());
-		out=new DataOutputStream(client.getOutputStream());
+		in=new DataInputStream(client.getInputStream());	//bind receive data
+		out=new DataOutputStream(client.getOutputStream());		//bind send data
 		
-		out.writeUTF("Hello,I am Server from:"+server.getInetAddress());
-		System.out.println("Client:"+in.readUTF());
+		out.writeUTF("Hello,I am Server from:"+server.getInetAddress());	//send to client
+		System.out.println("Client:"+in.readUTF());		//receive from client
 		
 		in.close();
 		out.close();
