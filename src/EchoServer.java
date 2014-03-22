@@ -26,12 +26,12 @@ public class EchoServer {
 				while(Flag){
 					String str=in.readUTF();
 					System.out.println("Client:"+str);
-					if (str==null||"".equals(str)){
-						Flag=false;
-					}else if("bye".equals(str)){
-						out.writeUTF("bye!");
+					if (str==null||"".equals(str)||"bye".equals(str)){
+						//when receive "" or "bye" client quit
+						out.writeUTF("bye bye!");
 						Flag=false;
 					}else if("close".equals(str)){
+						//when receive "close" server close
 						out.writeUTF("Server Close!");
 						Flag=false;
 						Flags=false;

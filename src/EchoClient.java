@@ -20,6 +20,7 @@ public class EchoClient {
 			out.writeUTF(str);	//send data to server
 			System.out.println("Server:"+in.readUTF());
 			if (str==null||"".equals(str)||"bye".equals(str)||"close".equals(str))
+				//when type "" "bye" "close" quit
 				flag=false;
 					
 		}
