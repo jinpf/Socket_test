@@ -12,3 +12,8 @@
 ###Transfer file using socket
 
 * First editon with *FServer.java* and *FClient.java* in `src/file/` which you can transfer file with writing the file path on command line using FClient, and then receive file using FServer. Also Server can run with multithreading. And **don`t be afraid to receive file with the same name**, because when receiving file with the same name ,Server can automatically add `.rec`.
+
+
+###GUI Socket Test
+
+* please see **Lan_Chat** https://github.com/jinpf/LAN_Chat repository.
