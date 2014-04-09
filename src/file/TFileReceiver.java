@@ -11,7 +11,7 @@ import java.net.Socket;
  * @author jinpf
  *
  */
-public class FServer {
+public class TFileReceiver {
 
 	public static void main(String[] args) {
 		try{
@@ -74,7 +74,14 @@ public class FServer {
 				//if file exist rename the file
 				f=new File(filepath+File.separator+filename);
 				while(f.exists()){
-					f=new File(f.getParent()+File.separator+f.getName()+".rec");
+					String name[]=f.getName().split("\\.");	//注意"\\."不能为"."
+					String fname=name[0];
+					for (int i=1;i<name.length-1;i++){
+						fname+="."+name[i];
+					}
+					fname+="_rec."+name[name.length-1];
+					f=new File(f.getParent()+File.separator+fname);
+//					System.out.println(fname);
 				}
 				
 				//receive file

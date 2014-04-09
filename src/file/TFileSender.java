@@ -13,7 +13,7 @@ import java.net.Socket;
  * @author jinpf
  * 
  */
-public class FClient {
+public class TFileSender {
 
 	public static void main(String[] args) {
 		Socket client=null;
